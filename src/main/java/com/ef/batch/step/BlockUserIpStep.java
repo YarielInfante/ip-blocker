@@ -92,8 +92,7 @@ public class BlockUserIpStep {
     @StepScope
     public ItemProcessor<BlockedUser, BlockedUser> processor() {
         return item -> {
-            log.info("############### List of blocked users ###############");
-            log.info("IP BLOCKED " + item.getIp());
+            System.out.println("IP BLOCKED " + item.getIp());
             return item;
         };
     }
