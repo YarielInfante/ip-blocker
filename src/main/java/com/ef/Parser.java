@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  * It expects the following execution arguments (not in the same order):
  * * --accesslog location of log file
  * * --startDate start date time
- * * --duration time range. It can be "hourly" or "daily"
+ * * --duration time period. It can be "hourly" or "daily"
  * * --threshold number of requests threshold
  * </p>
  * <p>

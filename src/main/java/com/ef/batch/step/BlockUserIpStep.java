@@ -40,7 +40,7 @@ public class BlockUserIpStep {
     /**
      * Bean Reader, it's the first part of our step. It queries all IP that exceeded the threshold within a specific time.
      *
-     * @param startDate this is the start date time of our range
+     * @param startDate this is the start date time of our period
      * @param duration  duration can be "HOUR" meaning that it will query for rows between startDate param and exactly 1 hour later.
      *                  It can also be "DAY" meaning it will query for rows between startDate param and exactly 1 day later.
      * @param threshold value used as our threshold
