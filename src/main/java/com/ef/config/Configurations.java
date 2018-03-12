@@ -13,8 +13,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 /**
+ * Configuration class
  *
- * for more reference visit https://github.com/brettwooldridge/HikariCP
+ * @author yinfante
  */
 @Configuration
 @PropertySource("classpath:/application.properties")
@@ -32,6 +33,12 @@ public class Configurations {
     @Autowired
     private Environment env;
 
+    /**
+     * Creation of data source. It reads url, username and password from our application.properties
+     *
+     * @return an instance of DataSource
+     * @see DataSource
+     */
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
         final HikariDataSource ds = new HikariDataSource();
@@ -41,12 +48,26 @@ public class Configurations {
         return ds;
     }
 
+    /**
+     * Creation of JdbcTemplate. It simplifies the use of JDBC and helps to avoid common errors.
+     *
+     * @param dataSource an instance of our DataSource needed for the creation.
+     * @return an instance of JdbcTemplate
+     * @see JdbcTemplate
+     */
     @Bean
-    public JdbcTemplate jdbcTemplate(DataSource dataSource){
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
 
+    /**
+     * Creation of SpringLiquibase. It loads a .sql file to run.
+     *
+     * @param dataSource an instance of our DataSource needed for the creation.
+     * @return an instance of SpringLiquibase
+     * @see SpringLiquibase
+     */
     @Bean
     public SpringLiquibase liquibase(DataSource dataSource) {
         SpringLiquibase sl = new SpringLiquibase();

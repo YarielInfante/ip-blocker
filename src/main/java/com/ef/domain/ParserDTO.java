@@ -2,6 +2,11 @@ package com.ef.domain;
 
 import lombok.Data;
 
+/**
+ * DTO object
+ *
+ * @author yinfante
+ */
 @Data
 public class ParserDTO {
 
