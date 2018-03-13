@@ -7,7 +7,10 @@ System prerequisite:
 
 
 Here you will find the program compiled as parser.jar. 
- 
+
+Here we use Spring batch framework to accomplish our goal of loading a really big web server log and analyze its data. 
+In this case determine what IP address to block.
+  
 application.properties file has the program default configuration parameters that are:
 
 connection string. Here it uses a database named "wallethub" with

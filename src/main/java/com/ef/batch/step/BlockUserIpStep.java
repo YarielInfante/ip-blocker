@@ -18,6 +18,8 @@ import javax.sql.DataSource;
 
 /**
  * Configuration for our step responsible of blocking IP addresses that exceeded the threshold within a specific time.
+ *
+ * @author yinfante
  */
 @Configuration
 @Slf4j

@@ -42,7 +42,7 @@ public class EmptyUserLogTableStep implements Tasklet {
      *                     they can be applied at a chunk boundary.
      * @param chunkContext Context object for weakly typed data stored for the duration of a chunk
      *                     (usually a group of items processed together in a transaction)
-     * @return
+     * @return RepeatStatus
      * @throws Exception
      */
     @Override
