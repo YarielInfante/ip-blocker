@@ -65,7 +65,7 @@ public class ParserJob {
     }
 
     /**
-     * Constructing our spring batch job setting the order or "flow" in which it will run each step.
+     * Building our spring batch job setting the order or "flow" in which it will run each step.
      *
      * @param jobBuilderFactory injected Convenient factory for a {@link JobBuilder} which sets the {@link JobRepository} automatically.
      * @return our Spring batch Job fully loaded
@@ -84,7 +84,7 @@ public class ParserJob {
     }
 
     /**
-     * Constructing empty USER_LOG table Step
+     * Building empty USER_LOG table Step
      *
      * @return our empty USER_LOG table Step
      * @see StepBuilderFactory
@@ -98,7 +98,7 @@ public class ParserJob {
     }
 
     /**
-     * Constructing file .log Loader Step
+     * Building file .log Loader Step
      *
      * @return our file .log Loader Step
      * @see StepBuilderFactory
@@ -116,7 +116,7 @@ public class ParserJob {
 
 
     /**
-     * Constructing our block IP addresses Step
+     * Building our block IP addresses Step
      *
      * @return our block IP addresses Step
      * @see BlockUserIpStep
