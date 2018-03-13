@@ -79,8 +79,8 @@ System prerequisite:
 To make all these requests possible, I used:
 
 - Java 8: to handle the main code development.
-  - Spring Batch: To handle file processing, data parsing and database processing. This framework made possible and easier the process of parsing the data and saving in database, of the logs. If you need to know about Spring Batch please check out the documentation in the following link: https://projects.spring.io/spring-batch/
-  - Spring: To do the necessary configurations of Spring Batch via annotations. If you need to know about Spring Framework please check out the documentation in the following link: https://projects.spring.io/spring-framework/
+- Spring Batch: To handle file processing, data parsing and database processing. This framework made possible and easier the process of parsing the data and saving in database, of the logs. If you need to know about Spring Batch please check out the documentation in the following link: https://projects.spring.io/spring-batch/
+- Spring: To do the necessary configurations of Spring Batch via annotations. If you need to know about Spring Framework please check out the documentation in the following link: https://projects.spring.io/spring-framework/
 - Mysql Database: To store the information requested.
 - Gradle: To download dependencies and compile the project.
 
