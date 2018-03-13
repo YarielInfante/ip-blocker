@@ -6,7 +6,7 @@ The request was:
 
 * To write a parser in Java that parses web server access log file, loads the log to MySQL and checks if a given IP makes more than a certain number of requests for the given duration. 
 
-  Java
+  **Java**
   ----
 
   (1) Create a java tool that can parse and load the given log file to MySQL. The delimiter of the log file is pipe (|)
@@ -24,7 +24,7 @@ The request was:
 	  The tool will find any IPs that made more than 250 requests starting from 2017-01-01.13:00:00 to 2017-01-02.13:00:00 (24 hours) and print them to console AND also load them to another MySQL table with comments on why it's blocked.
 
 
-  SQL
+  **SQL**
   ---
 
   (1) Write MySQL query to find IPs that mode more than a certain number of requests for a given time period.
@@ -34,7 +34,7 @@ The request was:
   (2) Write MySQL query to find requests made by a given IP.
  	
 
-  LOG Format
+  **LOG Format**
   ----------
   Date, IP, Request, Status, User Agent (pipe delimited, open the example file in text editor)
 
@@ -56,8 +56,7 @@ The request was:
 
   The output will have  192.168.102.136. If you open the log file, 192.168.102.136 has 500 or more requests between 2017-01-01.00:00:00 and 2017-01-01.23:59:59
 
-
-  Deliverables
+  **Deliverables**
   ------------
 
   (1) Java program that can be run from command line
@@ -70,20 +69,20 @@ The request was:
 
   (4) SQL queries for SQL test
 
-To make all these requests possible, I used:
-
-- Java 8: to handle the main code development.
-  Spring Batch: To handle file processing, data parsing and database processing. This framework made possible and easier the process of parsing the data and saving in database, of the logs. If you need to know about Spring Batch please check out the documentation in the following link: https://projects.spring.io/spring-batch/
-  Spring: To do the necessary configurations of Spring Batch via annotations. If you need to know about Spring Framework please check out the documentation in the following link: https://projects.spring.io/spring-framework/
-- Mysql Database: To store the information requested.
-- Gradle: To download dependencies and compile the project.
-
 Program Execution
 ----
 System prerequisite:
 - Java 8
 - MySql Data base
 - Gradle
+
+To make all these requests possible, I used:
+
+- Java 8: to handle the main code development.
+      Spring Batch: To handle file processing, data parsing and database processing. This framework made possible and easier the process of parsing the data and saving in database, of the logs. If you need to know about Spring Batch please check out the documentation in the following link: https://projects.spring.io/spring-batch/
+      Spring: To do the necessary configurations of Spring Batch via annotations. If you need to know about Spring Framework please check out the documentation in the following link: https://projects.spring.io/spring-framework/
+- Mysql Database: To store the information requested.
+- Gradle: To download dependencies and compile the project.
 
 Here you will find the program compiled as parser.jar. 
 
