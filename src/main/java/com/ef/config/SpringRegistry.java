@@ -1,10 +1,5 @@
 package com.ef.config;
 
-import com.ef.batch.job.ParserJob;
-import com.ef.batch.listener.JobCompletionNotificationListener;
-import com.ef.batch.step.BlockUserIpStep;
-import com.ef.batch.step.EmptyUserLogTableStep;
-import com.ef.batch.step.FileLoaderStep;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -22,13 +17,8 @@ public class SpringRegistry {
      */
     static {
         context = new AnnotationConfigApplicationContext();
-
-        context.register(EmptyUserLogTableStep.class);
-        context.register(ParserJob.class);
-        context.register(Configurations.class);
-        context.register(JobCompletionNotificationListener.class);
-        context.register(BlockUserIpStep.class);
-        context.register(FileLoaderStep.class);
+        // scan packages in search of spring annotated components
+        context.scan("com.ef");
 
         refreshContext();
     }
