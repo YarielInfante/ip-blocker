@@ -2,12 +2,10 @@ package com.ef.config;
 
 import com.zaxxer.hikari.HikariDataSource;
 import liquibase.integration.spring.SpringLiquibase;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -21,17 +19,14 @@ import javax.sql.DataSource;
 @PropertySource("classpath:/application.properties")
 public class Configurations {
 
-    @Value("${spring.datasource.url}")
+    @Value("${datasource.url}")
     private String jdbcUrl;
 
-    @Value("${spring.datasource.username}")
+    @Value("${datasource.username}")
     private String userName;
 
-    @Value("${spring.datasource.password}")
+    @Value("${datasource.password}")
     private String password;
-
-    @Autowired
-    private Environment env;
 
     /**
      * Creation of data source. It reads url, username and password from our application.properties
@@ -42,9 +37,9 @@ public class Configurations {
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
         final HikariDataSource ds = new HikariDataSource();
-        ds.setJdbcUrl(env.getProperty("datasource.url"));
-        ds.setUsername(env.getProperty("datasource.username"));
-        ds.setPassword(env.getProperty("datasource.password"));
+        ds.setJdbcUrl(jdbcUrl);
+        ds.setUsername(userName);
+        ds.setPassword(password);
         return ds;
     }
 
